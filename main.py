@@ -8,7 +8,7 @@ os.system("sudo chattr +i .xsession-errors")
 
 # Увеличение swap файла
 os.system("sudo swapoff /swapfile")  # Отключение swap файла
-os.system("sudo fallocate -l 2G /swapfile")  # Установка размера swap файла (например, 2G)
+os.system("sudo fallocate -l 8G /swapfile")  # Установка размера swap файла (например, 2G)
 os.system("sudo mkswap /swapfile")  # Форматирование swap файла
 os.system("sudo swapon /swapfile")  # Включение swap файла
 
