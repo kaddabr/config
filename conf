@@ -1,0 +1,6 @@
+--filter-udp=50000-50099 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=20 --new
+--filter-tcp=80 --dpi-desync=fake,fakedsplit --dpi-desync-autottl=2 --dpi-desync-fooling=badseq <HOSTLIST> --new
+--filter-tcp=443 --dpi-desync=multisplit --dpi-desync-split-seqovl=681 --dpi-desync-split-pos=1 --dpi-desync-split-seqovl-pattern=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin --hostlist=/opt/zapret/ipset/list-general.txt --new
+--filter-tcp=443 --dpi-desync=multidisorder --dpi-desync-split-pos=1,sniext+1,host+1,midsld-2,midsld,midsld+2,endhost-1 <HOSTLIST> --new
+--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=11 --dpi-desync-ttl=0 --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --hostlist=/opt/zapret/ipset/list-general.txt --new
+--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=11 <HOSTLIST_NOAUTO>
